@@ -24,6 +24,16 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<taosdata.version>2.0.37</taosdata.version>
+		<influxdb-client.version>4.3.0</influxdb-client.version>
+		<webp-imageio.version>0.1.6</webp-imageio.version>
+		<geoip2.version>3.0.0</geoip2.version>
+		<aliyun-java-sdk-core.version>4.6.0</aliyun-java-sdk-core.version>
+		<aliyun-java-sdk-dysmsapi.version>2.2.1</aliyun-java-sdk-dysmsapi.version>
+
+		<hutool-all.version>5.7.22</hutool-all.version>
+		<mpxj.version>10.2.0</mpxj.version>
+		<junit.version>4.13.2</junit.version>
 	</properties>
 
 	<dependencies>
@@ -31,74 +41,108 @@
 		<dependency>
 			<groupId>com.taosdata.jdbc</groupId>
 			<artifactId>taos-jdbcdriver</artifactId>
-			<version>2.0.32</version>
+			<version>${taosdata.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>commons-codec</artifactId>
+					<groupId>commons-codec</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>httpclient</artifactId>
+					<groupId>org.apache.httpcomponents</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>httpcore</artifactId>
+					<groupId>org.apache.httpcomponents</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>slf4j-api</artifactId>
+					<groupId>org.slf4j</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<dependency>
 			<groupId>com.influxdb</groupId>
 			<artifactId>influxdb-client-java</artifactId>
-			<version>2.0.0</version>
+			<version>${influxdb-client.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>gson</artifactId>
+					<groupId>com.google.code.gson</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>kotlin-stdlib</artifactId>
+					<groupId>org.jetbrains.kotlin</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<dependency>
 			<groupId>org.sejda.imageio</groupId>
 			<artifactId>webp-imageio</artifactId>
-			<version>0.1.6</version>
+			<version>${webp-imageio.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.maxmind.geoip2</groupId>
 			<artifactId>geoip2</artifactId>
-			<version>2.15.0</version>
+			<version>${geoip2.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.aliyun</groupId>
 			<artifactId>aliyun-java-sdk-core</artifactId>
-			<version>4.0.6</version>
+			<version>${aliyun-java-sdk-core.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>commons-codec</artifactId>
+					<groupId>commons-codec</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>httpcore</artifactId>
+					<groupId>org.apache.httpcomponents</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>com.aliyun</groupId>
 			<artifactId>aliyun-java-sdk-dysmsapi</artifactId>
-			<version>1.1.0</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-			<version>3.8.1</version>
+			<version>${aliyun-java-sdk-dysmsapi.version}</version>
 		</dependency>
 
 		<!-- hutool工具类 -->
 		<dependency>
 			<groupId>cn.hutool</groupId>
 			<artifactId>hutool-all</artifactId>
-			<version>5.7.22</version>
+			<version>${hutool-all.version}</version>
 		</dependency>
 
 		<!-- 读取project.mmp文件 -->
 		<dependency>
 			<groupId>net.sf.mpxj</groupId>
 			<artifactId>mpxj</artifactId>
-			<version>8.3.5</version>
+			<version>${mpxj.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>jakarta.xml.bind-api</artifactId>
+					<groupId>jakarta.xml.bind</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>jaxb-runtime</artifactId>
+					<groupId>org.glassfish.jaxb</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>slf4j-api</artifactId>
+					<groupId>org.slf4j</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
-
-		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi</artifactId>
-			<version>4.0.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi-ooxml</artifactId>
-			<version>4.1.0</version>
-		</dependency>
-
 
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
+			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
