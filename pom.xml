@@ -6,6 +6,18 @@
 	<groupId>org.huluobo</groupId>
 	<artifactId>base</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>8</source>
+					<target>8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 	<packaging>jar</packaging>
 
 	<name>@base</name>
@@ -16,6 +28,31 @@
 	</properties>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>com.taosdata.jdbc</groupId>
+			<artifactId>taos-jdbcdriver</artifactId>
+			<version>2.0.32</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.influxdb</groupId>
+			<artifactId>influxdb-client-java</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.sejda.imageio</groupId>
+			<artifactId>webp-imageio</artifactId>
+			<version>0.1.6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.maxmind.geoip2</groupId>
+			<artifactId>geoip2</artifactId>
+			<version>2.15.0</version>
+		</dependency>
+
 		<dependency>
 			<groupId>com.aliyun</groupId>
 			<artifactId>aliyun-java-sdk-core</artifactId>
@@ -37,7 +74,7 @@
 		<dependency>
 			<groupId>cn.hutool</groupId>
 			<artifactId>hutool-all</artifactId>
-			<version>4.1.19</version>
+			<version>5.7.22</version>
 		</dependency>
 
 		<!-- 读取project.mmp文件 -->
@@ -47,7 +84,6 @@
 			<version>8.3.5</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
